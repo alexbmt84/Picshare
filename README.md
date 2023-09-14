@@ -4,6 +4,8 @@ C'est pas drôle est une application web qui vous permet de partager, de découv
 
 Les fichiers .env ont été ajoutés sur le dépot à titre éducatif.
 
+![preview](https://github.com/alexbmt84/Picshare/assets/106599438/74262189-d942-46c7-8161-538297a0f25b)
+
 # Fonctionnalités
 
 Partage d'images : Téléchargez et partagez vos images préférées avec la communauté.
