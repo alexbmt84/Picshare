@@ -2,6 +2,8 @@
 
 C'est pas drôle est une application web qui vous permet de partager, de découvrir et de voter pour vos images préférées dans une variété de catégories. L'application est conçue pour être simple à utiliser, tout en offrant des fonctionnalités complètes pour les utilisateurs qui souhaitent interagir avec la communauté.
 
+Les fichiers .env ont été ajoutés sur le dépot à titre éducatif.
+
 # Fonctionnalités
 
 Partage d'images : Téléchargez et partagez vos images préférées avec la communauté.
