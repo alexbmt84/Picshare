@@ -1,0 +1,42 @@
+{{!-- Login page... --}}
+
+<section style="justify-content:center;">
+
+    <div class="contentBox">
+
+        <div class="formBox">
+
+            <form class="login-form2" action="/login" method="post">
+
+                <h1 class="cssanimation blurIn" style="font-size:1.8em; margin-top: 10px; margin-bottom: 20px; ">Connexion</h1>
+
+                {{!-- EMAIL --}}
+
+                <div class="inputBx">
+                    <label for="userEmail" classe="mesg" id="email-label">Email</label>
+                    <input type="text" name="email" id="userEmail" placeholder="Entrez votre email">
+                </div>
+
+                {{!-- PASSWORD --}}
+                <div class="inputBx">
+                    <label for="userPassword" classe="mesg">Mot de passe</label>
+                    <input type="password" name="password" id="userPassword" placeholder="Entrez votre mot de passe">
+                </div>
+
+                {{!-- BTN SUB --}}
+                <div class="inputBx mt-5">
+                    <input type="submit" value="Connexion">
+                </div>
+
+                {{!-- ->SIGNUP --}}
+                <div class="inputBx">
+                    <p>Pas encore inscrit? <a href="/signup">Cliquez ici.</a></p>
+                </div>
+
+            </form>
+            
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,56 @@
+{{!-- Upload image form --}}
+
+<link rel="stylesheet" href="/css/upload.css">
+
+<div class="upload-img" style="margin-top: -80px; display: flex; flex-direction: column; align-items: center;">
+    
+    <h1 class="text-center mb-5">Ajouter une image</h1>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+        <div class="file-input-container"> 
+
+            <label class="file-input-label">
+
+                <i class='bx bx-image-add bx-sm'></i>
+                Choisir un fichier <input type="file" name="upload_file" required>
+
+            </label> 
+
+        </div>
+
+        <div class="image-preview">
+            <img id="preview" src="" alt="">
+        </div>
+
+
+        <input type="text" name="title" placeholder="Titre de l'image" required><br><br>
+
+        <fieldset>
+
+            <legend>Choisis la catégorie qui correspond à ton image :</legend>
+
+            {{#each categories}}
+
+                <div>
+
+                    <label for="{{this.id}}"> <input type="radio" name="categoryId" value="{{this.id}}">
+                        {{this.name}}
+                    </label>
+
+                </div>
+
+            {{/each}}
+
+        </fieldset>
+
+        <input type="textarea" name="description" placeholder="Décris ton image ..."><br><br>
+
+        <input type="submit" value="Publier !">
+            
+    </form>
+    
+</div>
+
+{{!-- Scripts --}}
+<script src="/js/addImage.js"></script>

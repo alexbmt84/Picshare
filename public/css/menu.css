@@ -1,0 +1,352 @@
+/* ScrolBar  */
+.scrollbar {
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.scrollbar:hover {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Style */
+#style-1::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+
+#style-1::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F7F7F7;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #BFBFBF;
+}
+/* Scrollbar End */
+
+.bxs-home{
+  position: relative;
+  display: table-cell;
+  height: 36px;
+  text-align: center;
+  top: 12px;
+  left: -61px;
+  font-size: 20px;
+}
+
+.bx-search-alt-2{
+  position: relative;
+  display: table-cell;
+  height: 36px;
+  text-align: center;
+  top: -8px;
+  left: 0px;
+  font-size: 20px;
+}
+
+.bxs-category {
+  position: relative;
+  display: table-cell;
+  height: 36px;
+  text-align: center;
+  top: -8px;
+  left: 0px;
+  font-size: 20px;
+}
+
+li {
+  height: 25px;
+}
+
+.category-checkbox {
+  position: relative;
+  display: table-cell;
+  top: 24px;
+  left: 40px;
+  z-index: 92;
+}
+
+.main-menu:hover,
+nav.main-menu.expanded {
+  width: 175px;
+  overflow: hidden;
+}
+
+.main-menu {
+  background: #F7F7F7;
+  border-radius: 0 20px 20px 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  width: 55px;
+  overflow: hidden;
+  -webkit-transition: width .2s linear;
+  transition: width .2s linear;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  box-shadow: 1px 0 15px rgba(0, 0, 0, 0.42);
+  z-index: 90;
+}
+
+input[type=checkbox], input[type=radio]{
+  cursor: pointer;
+}
+
+#changeColorBtn {
+  margin-top: 1px;
+  height: 35px;
+  width: 55px;
+  padding: 5px;
+  font-size: 12px;
+  background-color: #f2f2f2;
+  border: 2px solid #d0d0d0;
+  border-radius: 4px;
+  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.373);
+}
+
+#changeColorBtn:focus {
+  outline: none;
+}
+
+#logoutSide {
+  margin-top: 1px;
+  height: 35px;
+  width: 55px;
+  padding: 5px;
+  font-size: 12px;
+  background-color: #f2f2f2;
+  border: 2px solid #d0d0d0;
+  border-radius: 0 0 20px 0;
+  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.373);
+}
+
+#logoutSide:focus {
+  outline: none;
+}
+
+#colorInput {
+  margin-top: 1px;
+  height: 30px;
+  width: 55px;
+  padding: 5px;
+  font-size: 12px;
+  background-color: #f2f2f2;
+  border: 2px solid #d0d0d0;
+  border-radius: 4px;
+  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.373);
+}
+
+#colorInput:hover {
+  cursor: pointer;
+  padding: 1px;
+  transition: all .14s linear;
+
+}
+
+.bxs-palette {
+  font-size: 20px;
+  color: #8a8a8a;
+  padding-bottom: 5px;
+}
+
+.bxs-palette:hover {
+  color: #212121;
+  animation-duration: 0.4s;
+  animation-iteration-count:0.6;
+}
+
+.bxs-category,
+.bx-search-alt-2 {
+  font-size: 35px;
+  color: #8a8a8a;
+  /* margin-bottom: 10px; */
+  padding-left: 8px;
+}
+
+.bxs-category:hover,
+.bx-search-alt-2:hover {
+  color: #212121;
+}
+
+.bx-power-off {
+  font-size: 20px;font-size: 20px;
+  color: #8a8a8a;
+  padding-bottom: 5px;
+  color: #8a8a8a;
+  padding-left: 10px;
+
+}
+
+.bx-power-off:hover {
+  color: #212121;
+  animation-duration: 0.2s;
+  animation-iteration-count:0.6;
+  cursor: pointer;
+}
+
+.main-menu>ul {
+  margin: 7px 0;
+}
+  
+.homeLi {
+  margin-top: 15px;
+  margin-bottom: 45px;
+  width: 40px;
+  z-index: 99;
+}
+
+.home-text {
+  position: relative;
+  top: 14px;
+  left: -115px;
+  display: table-cell;
+  vertical-align: middle;
+  width: 70px;
+  font-size: 1.5em;
+  z-index: 93;
+}
+
+.side-bar-title {
+  font-size: 14px !important;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 18px;
+  left: 60px;
+}
+
+.search-bar {
+  font-size: 14px !important;
+  text-align: center;
+  position: absolute;
+  top: 16px;
+  left: 59px;
+}
+
+.main-menu li {
+  position: relative;
+  display: block;
+  width: 210px;
+}
+  
+.main-menu li>a {
+  position: relative;
+  width: 255px;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: #8a8a8a;
+  font-size: 13px;
+  text-decoration: none;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  -webkit-transition: all .14s linear;
+  transition: all .14s linear;
+  font-family: 'Strait', sans-serif;
+  border-top: 1px solid #f2f2f2;
+  text-shadow: 1px 1px 1px #fff;
+}
+  
+.main-menu .nav-icon {
+  position: relative;
+  display: table-cell;
+  width: 55px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.main-menu .nav-text {
+  position: relative;
+  left: 60px;
+  display: table-cell;
+  vertical-align: middle;
+  width: 190px;
+  font-family: 'Titillium Web', sans-serif;
+  text-transform: uppercase;
+  z-index: 90;
+  font-size: 15px;
+}
+
+.nav {
+  padding-bottom: 0px !important;
+}
+
+.main-menu .fb-like {
+  left: 180px;
+  position: absolute;
+  top: 15px;
+}
+
+.main-menu>ul.logout {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  
+}
+
+.no-touch .scrollable.hover {
+  overflow-y: hidden;
+}
+
+.no-touch .scrollableFail
+.hover:hover {
+  overflow-y: auto;
+  overflow: visible;
+}
+
+
+/* Logo Hover Property */
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  border-left: 0px solid #F7F7F7;
+}
+
+.row {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.toUpperCase {
+  outline: 0;
+  text-transform: uppercase;
+}
+
+/* Darker element side menu Start*/
+.darkerli {
+  background-color: #ededed;
+  text-transform: capitalize;
+}
+
+.darkerlishadow {
+  height: 50px;
+  background-color: #ededed;
+  text-transform: capitalize;
+  -webkit-box-shadow: inset 0px 5px 5px -4px rgba(50, 50, 50, 0.55);
+  -moz-box-shadow: inset 0px 5px 5px -4px rgba(50, 50, 50, 0.55);
+  box-shadow: inset 0px 5px 5px -4px rgba(50, 50, 50, 0.55);
+  padding-top: 20px;
+}
+
+.darkerlishadowdown {
+  height: 40px;
+  background-color: #ededed;
+  text-transform: capitalize;
+  -webkit-box-shadow: inset 0px -4px 5px -4px rgba(50, 50, 50, 0.55);
+  -moz-box-shadow: inset 0px -4px 5px -4px rgba(50, 50, 50, 0.55);
+  box-shadow: inset 0px -4px 5px -4px rgba(50, 50, 50, 0.55);
+}
+/* Darker element side menu End*/

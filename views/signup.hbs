@@ -1,0 +1,48 @@
+{{!-- Signup page... --}}
+
+<section style="justify-content: center;">
+
+    <div class="contentBox">
+
+        <div class="formBox">
+
+            <form class="signup-form" action="/signup" method="POST">
+
+                <h1 class="cssanimation blurIn" style="font-size:1.8em; margin-bottom: 20px; ">Inscription</h1>
+
+                {{!-- PSEUDO --}}
+                <div class="inputBx">
+                    <label for="usernameInput" classe="mesg">Pseudonyme</label>
+                    <input type="text" name="username" id="usernameInput" placeholder="Entre ton pseudo" required>
+                </div>
+
+                {{!-- EMAIL --}}
+                <div class="inputBx">
+                    <label for="userEmail" classe="mesg" name="email" id="email-label">Adresse E-mail</label>
+                    <input type="text" name="email" id="userEmail" placeholder="Entrez votre email" required>
+                </div>
+
+                {{!-- PASSWORD --}}
+                <div class="inputBx">
+                    <label for="userPassword" classe="mesg" name="password">Mot de passe</label>
+                    <input type="password" name="password" id="userPassword" placeholder="Entrez votre mot de passe" required>
+                </div>
+
+                {{!-- CONFIRM PASSWORD --}}
+                <div class="inputBx">
+                    <label for="confirmPasswordInput" >Confirmation du mot de passe</label>
+                    <input type="password" name="confirmPassword" id="confirmPasswordInput" placeholder="Entrez de nouveau votre mot de passe" required>
+                </div>
+                    
+                <div class="inputBx">
+                    <input type="submit" value="Créer un compte">
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+

@@ -1,0 +1,308 @@
+{{!-- Main --}}
+{{!-- What we'll put here will be applied to sub routes too... --}}
+
+<!DOCTYPE html>
+
+  <html lang="fr">
+
+    <head>
+
+      <meta charset="UTF-8">
+      <title>C'est pas drole</title>
+
+      {{!-- CDN --}}
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+      <script src="/js/lozad.js"></script>
+
+      {{!-- CSS --}}
+      <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/menu.css">
+      <link rel="stylesheet" href="/css/log.css">
+    </head>
+
+    {{!-- Body --}}
+    <body data-user-id="{{userId}}" style="background: {{bgColor}};">
+
+      <header>
+
+        {{!-- Navbar --}}
+        <nav>
+
+          {{!-- If currentUser... --}}
+          {{#if isCurrentUser}}
+
+            <div class="navbar-brand">
+              <a href="/home">
+                <img src="/images/logo.png" alt="cpasdrole" width="200px">
+              </a>
+            </div>
+
+          {{!-- Else... --}}
+          {{else}}
+
+            <div class="navbar-brand">
+              <a href="/">
+                <img src="/images/logo.png" alt="cpasdrole" width="200px">
+              </a>
+            </div>
+
+          {{/if}}
+          {{!-- End of if... --}}
+
+          {{!-- We change menu's disposition in function...--}}
+          <div class="navbar-items">
+
+            {{!-- If an user is connected... --}}
+            {{#if user}}
+            
+              {{!-- If currentUser... --}}
+              {{#if isCurrentUser}}
+
+                <a class="nav-item btn btn-custom-violet" style="transition: none; border:none" href="/upload">Partager une image</a>
+                <a class="nav-item btn btn-custom-violet" style="transition: none; border:none"  href="/myImg">Voir mes images</a>
+                <a class="nav-item btn btn-light" id="logout" style="transition: none; border:none" href="/logout">Déconnexion</a>
+                
+                {{!-- If user has an avatar... --}}
+                {{#if user.avatar}}
+
+                    <div class="profile-image">
+                      <a href="/profile/{{user.id}}"> 
+                        <img src="/users/avatars/{{user.avatar}}" alt="Profile Image">
+                      </a>
+                  </div>
+
+                {{!-- If user doesn't have any avatar... --}}
+                {{else}}
+
+                  <div class="profile-image">
+                    <a href="/profile/{{user.id}}"> 
+                      <img src="/images/default.png" alt="">
+                    </a>
+                  </div>
+
+                  <div id="imagePreview"
+                      style="background-image: url('https://cdn.dribbble.com/users/6142/screenshots/5679189/media/1b96ad1f07feee81fa83c877a1e350ce.png?compress=1&resize=400x300&vertical=center');">
+                  </div>
+
+                {{/if}}
+                {{!-- End of if... --}}
+
+                <p style="color: white; font-size: large; margin:0; padding-right: 20px; cursor:pointer;">{{user.username}}</p>
+                
+              {{!-- If != currentUser... --}}
+              {{else}} 
+
+                <a class="nav-item btn btn-custom-violet" href="/upload">Partager une image</a>
+                <a class="nav-item btn btn-light" href="/uploads">Mes images</a>
+                <a class="nav-item btn btn-light" id="logout" href="/logout">Déconnexion</a>
+
+                <div class="profile-image">
+                  <a href="/profile/{{userId}}"> 
+                    <img src="/users/avatars/{{avatar}}" alt="Profile Image">
+                  </a>
+                </div>
+
+                <p style="color: white; font-size: large; margin:0; padding-right: 20px; cursor:pointer;">{{username}}</p>
+                
+              {{/if}}
+              {{!-- End of if... --}}
+
+            {{!-- If user's not connected...   --}}
+            {{else}}
+
+              <a class="nav-item btn btn-light" href="/login" style="z-index: 1; transition: none; border:none">Connexion</a>
+            
+            {{/if}}
+            {{!-- End of if... --}}
+
+          </div>
+
+        </nav>
+
+      </header>
+
+      <!-- Side Bar -->
+      <div id="row" class="row">
+
+        <div class="main-menu">
+
+          <div class="scrollbar" id="style-1">
+
+            <ul class="nav nav-pills flex-column mb-auto toUpperCase">
+              
+              {{!-- If currentUser... --}}
+              {{#if isCurrentUser}}
+
+                <li class="homeLi toUpperCase">
+
+                  <a class="homeLink" href="/home">
+                    <i class='bx bxs-home bx-md bx-burst-hover' style="animation-iteration-count: 1;animation-duration: 0.5s;"></i>
+                    <span class="home-text" for="category{{this.id}}">Accueil</span>
+                  </a>
+
+                </li>
+
+              {{!-- If != currentUser... --}}
+              {{else}}
+
+                <li class="homeLi toUpperCase">
+
+                  <a class="homeLink" href="/">
+                    <i class='bx bxs-home bx-md bx-burst-hover' style="animation-iteration-count: 1;animation-duration: 0.5s;"></i>
+                    <span class="home-text" for="category{{this.id}}">Accueil</span>
+                  </a>
+
+                </li>
+
+              {{/if}}
+              {{!-- End of if --}}
+
+
+                <li class="darkerlishadow textLi toUpperCase">
+
+                  <i class='bx bx-search-alt-2 bx-burst-hover' style="animation-iteration-count: 1;animation-duration: 0.5s;"></i>
+                  <span class="search-bar">
+                    <input href="/home" id="hashtagSearch" value="" type="search" placeholder="#Drôle..." style="padding-left:8px; border-radius:15px; width:100px; outline:none;">
+                  </span>
+
+                </li>
+
+
+              {{#if categories}}
+              <li class="darkerlishadow textLi toUpperCase">
+
+                <i class='bx bxs-category bx-burst-hover' style="animation-iteration-count: 1;animation-duration: 0.5s;"></i>
+                <span class="side-bar-title">Catégories :</span>
+
+              </li>
+              
+              {{!-- For each category... --}}
+              {{#each categories}}
+
+                <li class="darkerli catLi toUpperCase">
+
+                  <input class="form-check-input category-checkbox" type="checkbox" value="{{this.id}}" id="category{{this.id}}">
+                  <span class="nav-text" for="category{{this.id}}">{{this.name}}</span>
+              
+                </li>
+              
+
+              {{/each}}
+              {{!-- End foreach... --}}
+              {{/if}}
+
+              <li class="darkerlishadowdown"></li>
+
+              <input type="color" id="colorInput" name="colorCode" value="#212121">
+
+              <button id="changeColorBtn" onclick="changeColor()">
+                <i class='bx bxs-palette bx-tada-hover'></i>
+              </button>
+
+              <a href="/logout" id="logoutSide">
+                <i class='bx bx-power-off bx-burst-hover'></i>
+              </a>
+
+            </ul>
+
+          </div>
+
+        </div>
+        
+        <main class="container-fluid">
+          {{{body}}} <!-- This is where the content of each page will be rendered -->
+        </main>
+
+      </div>
+
+      <!-- Footer -->
+      <footer class="pt-3 bg-dark">
+
+        <div class="ml-1 row">
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+
+            <h5 class="text-white">C'est pas drôle</h5>
+
+            <ul class="nav flex-column">
+
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Acceuil</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQ</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">À propos</a></li>
+            
+            </ul>
+
+          </div>
+        
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+            
+            <h5 class="text-white">l'équipe</h5>
+
+            <ul class="nav flex-column">
+
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Nous contacter</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Adresse</a></li>
+            
+            </ul>
+          
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+
+            <h5 class="text-white">Légal</h5>
+
+            <ul class="nav flex-column">
+
+              <li class="nav-item mb-2"><a href="https://www.facebook.com/policies_center/" class="nav-link p-0 text-muted">Conditions d'utilisation</a></li>
+              <li class="nav-item mb-2"><a href="https://www.facebook.com/privacy/policy/?entry_point=comet_dropdown" class="nav-link p-0 text-muted">Confidentialité</a></li>
+              <li class="nav-item mb-2"><a href="https://commission.europa.eu/cookies-policy_fr" class="nav-link p-0 text-muted">Cookies</a></li>
+            
+            </ul>
+
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-8 col-lg-4 offset-md-1 mb-3">
+
+            <form>
+
+              <h5 class="text-white">Rejoins notre communauté en t'inscrivant à notre newsletter !</h5>
+              <p class="text-white">La bouffée mensuelle de nouveautés et de folies en provenance de chez nous. Allez viens on est bien !</p>
+              
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <input id="newsletter1" type="text" class="form-control mr-3" placeholder="ton @ ;) ! ">
+                <button class="btn btn-custom-violet" type="button">Allez viens !</button>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-end pt-3 pr-4 border-top">
+          <p class="text-white ml-3">© 2022 Company, Inc. All rights reserved.</p>
+          <br>
+          <p class="text-grey-md ml-3">Gaëtan, Alexis, Marie-Charlotte</p>
+          <br>
+          <p class="text-grey-md ml-3">Merci à toute l'équipe !</p>
+
+        </div>
+
+      </footer>
+
+      {{!-- Scripts --}}
+      <script src="/js/changeColor.js"></script> {{!-- Change background-color... --}}
+      <script type="module" src="/js/popup.js"></script> {{!-- Login popup script... --}}
+      <script type="module" src="/js/hashtagSearch.js"></script>
+      
+    </body>
+    
+  </html>

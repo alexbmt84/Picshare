@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+:root {
+  --green: #58a497;
+  --yellow: #e09449;
+  --lightgreen1: #a4bdb7;
+  --brown: #8b4448;
+  --gray: gray;
+  --lightgreen2: rgb(164, 189, 183, 0.5);
+  --box: #ededed;
+}
+
+/* Box content*/
+
+.main-follow {
+  display: flex;
+  border: #d6d5d5 2px solid;
+  border-radius: 10px;
+  width: 200px;
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+  width: 350px;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  background: #ededed;
+  border: #b4b4b4 1px solid;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box1 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.content {
+  margin: 15px 2px;
+}
+
+.avatar-upload {
+  position: relative;
+  max-width: 205px;
+  margin: 25px auto;
+}
+
+.avatar-upload .avatar-edit {
+  position: absolute;
+  right: 12px;
+  z-index: 1;
+  top: 10px;
+}
+
+.avatar-upload .avatar-edit input {
+  display: none;
+}
+
+.avatar-upload .avatar-edit input + label {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload .avatar-edit input + label:hover {
+  background: #f1f1f1;
+  border-color: #d6d6d6;
+}
+
+.avatar-upload .avatar-edit input + label:after {
+  content: "\f040";
+  font-family: 'FontAwesome';
+  color: #757575;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+
+.avatar-upload .avatar-preview {
+  width: 192px;
+  height: 192px;
+  position: relative;
+  border-radius: 100%;
+  border: 6px solid #F8F8F8;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.avatar-upload .avatar-preview > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.level {
+  font-size: 0.7em;
+  background-color: rgb(164, 189, 183, 0.5);
+  width: 50px;
+  padding: 3px;
+  border-radius: 5px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+
+  display: block;
+  margin: 0px auto 10px;
+}
+
+.name {
+  font-size: 1.25em;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+.follow {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #590098;
+}
+
+.numbers {
+  font-size: 1em;
+  color: #000000;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.job_title {
+  font-size: 0.85em;
+  font-weight: bolder;
+  color: gray;
+  margin-top: -2px;
+}
+
+.job_discription {
+  font-size: 0.7em;
+  color: gray;
+  margin: 10px 30px 20px;
+}
+
+.icons {
+  margin: 0px 30px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icons button {
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  font-size: 1em;
+}
+
+ion-icon:hover {
+  color: #58a497;
+  transition: 0.5s;
+}
+
+button {
+  width: 130px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 20px 30px 0px;
+}
+
+.button .message {
+  background: #ededed;
+  border: 2px solid #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+
+button.message:hover {
+  letter-spacing: 1px;
+  transition: 0.5s;
+  color: white;
+  background: #212121;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 0px 10px;
+}
+
+h5 {
+  font-weight: bolder;
+  font-size: 1em;
+}
+
+.row p {
+  font-size: 0.8em;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsiveness:Start */
+
+@media screen and (max-width: 480px) {
+    .box{
+        width: 100vw;
+        border-radius: 0px;
+    }
+    .button{
+        display: flex;
+        flex-direction: column;
+    }
+    .button button{
+        width: 250px;
+    }
+    button.connect{
+        margin-top: 10px;
+    }
+    .content2{
+        padding: 0px 20px;
+    }
+    .content2 img{
+        width: 60px;
+        height: 60px;
+    }
+}

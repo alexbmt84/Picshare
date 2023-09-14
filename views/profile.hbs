@@ -1,0 +1,156 @@
+{{!-- Profile page... --}}
+
+<link rel="stylesheet" href="/css/profile.css">
+
+<section class="container">
+
+  <form action="/profile/avatar" method="POST" enctype="multipart/form-data" class="box1 box">
+    
+    <div class="content">
+
+      <div class="avatar-upload">
+
+        {{#if isCurrentPage}}
+
+          <div class="avatar-edit">
+
+            <input type='file' id="imageUpload" name="avatar" accept="image/*" />
+            <label for="imageUpload"></label>
+
+          </div>
+
+          <div class="avatar-preview">
+
+            {{#if avatar}}
+
+              <div class="imagePreview" style="background-image: url('/users/avatars/{{ user.avatar }}');"></div>
+                    
+            {{else}}
+
+              <div class="imagePreview"
+                  style="background-image: url('/images/default.png');">
+              </div>
+
+            {{/if}}
+
+        {{else}}
+
+          <div class="avatar-preview">
+
+            {{#if avatar}}
+
+              <div class="imagePreview" style="background-image: url('/users/avatars/{{ avatar }}');"></div>
+                    
+            {{else}}
+
+              <div class="imagePreview"
+                  style="background-image: url('https://cdn.dribbble.com/users/6142/screenshots/5679189/media/1b96ad1f07feee81fa83c877a1e350ce.png?compress=1&resize=400x300&vertical=center');">
+              </div>
+
+            {{/if}}
+
+        {{/if}}
+
+        </div>
+      
+      </div>
+      
+    </div>
+
+    <div class="text">
+
+      <p class="name">{{username}}</p>
+      <p class="job_title">Web Developer</p>
+
+      <div class="main-follow">
+
+        <div class="followers">
+          <p class="follow">Followers |&nbsp;</p>
+          <p class="numbers">{{ countFollowers }}</p>
+        </div>
+
+        <div class="followings">
+          <p class="follow">Following</p>
+          <p class="numbers">{{ countFollowings }}</p>
+        </div>
+
+        </div>
+          <p class="job_title">{{email}}</p>
+          <p class="job_discription">This is just a short description, you'll be able to write your own one
+              soon... :)</p>
+        </div>
+
+        <div class="icons">
+            <button><ion-icon name="logo-dribbble"></ion-icon></button>
+            <button><ion-icon name="logo-instagram"></ion-icon></button>
+            <button><ion-icon name="logo-twitter"></ion-icon></button>
+            <button><ion-icon name="logo-linkedin"></ion-icon></button>
+            <button><ion-icon name="logo-facebook"></ion-icon></button>
+            <button><ion-icon name="logo-behance"></ion-icon></button>
+        </div>
+
+        {{#if isCurrentPage}}
+
+          <div class="button">
+
+              <div>
+                  <button class="message" type="submit">Save Changes</button>
+              </div>
+
+          </div>
+
+        {{else}}
+
+          {{#if isFollowing}}
+
+            <!-- Display the "Unfollow" button -->
+            <div>
+                <button id="clickme" class="connect" type="button" onclick="unfollowUser({{idUser}})">Unfollow</button>
+            </div>
+
+          {{else}}
+
+            <!-- Display the "Follow" button -->
+            <div>
+                <button id="follow" class="connect" type="button" onclick="followUser({{idUser}})">Follow</button>
+            </div>
+
+          {{/if}}
+
+        {{/if}}
+
+      </div>
+
+    </div>
+    
+  </form>
+
+</section>
+
+<script>
+
+  document.querySelectorAll('#follow').onclick = function() {
+
+    followUser({{idUser}});
+
+  };
+
+</script>
+
+<script>
+
+  document.querySelectorAll('#clickme').onclick = function() {
+
+    unfollowUser({{idUser}});
+
+  };
+
+</script>
+
+<script src="/js/profilePic.js"></script>
+<script src="/js/changeColor.js"></script>
+<script src="/js/popup.js"></script>
+<script src="/js/follow.js"></script>
+<script src="/js/unfollow.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

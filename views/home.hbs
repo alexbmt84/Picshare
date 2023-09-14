@@ -1,0 +1,105 @@
+{{!-- Home page... --}}
+
+{{#if message}}
+
+  <div class="alert {{messageClass}} mt-4" role="alert">
+    {{message}}
+  </div>
+
+{{/if}}
+
+  {{#if isCurrentUser}}
+
+    <h1 class="text-center mb-5 text-white" style="padding-left: 50px;">Bien le bonjour !</h1>
+    
+    <div class="imageRow" id="imageRow" style="justify-content:flex-start;">
+  
+    {{#each images}}
+
+      <div class="image-box" data-image-id="{{id}}" data-category="{{this.categoryId}}">
+        
+        <a class="image-card" href="/image/{{id}}">
+        
+          <h3 class="thumbnail-title text-white">{{title}}</h3>
+
+
+            <div class="thumbnail-container">
+              <img src="{{path}}" alt="{{title}}" class="thumbnail-image lozad">
+            </div>
+
+            <div>
+              <a class="userContent" href="/profile/{{idUser}}">
+                <i class='bx bxs-user'></i><p class="usernameContent">{{username}}</p>
+              </a>
+            </div>
+
+        </a>
+
+          <div class="rating">
+            <span class="rating__result" id="rating-result-{{id}}"></span>
+            <i class="rating__star {{#if (gte average 1)}}fas{{else}}far{{/if}} fa-star" data-star-value="1" data-vote-count="{{voteCount}}"></i>
+            <i class="rating__star {{#if (gte average 2)}}fas{{else}}far{{/if}} fa-star" data-star-value="2" data-vote-count="{{voteCount}}"></i>
+            <i class="rating__star {{#if (gte average 3)}}fas{{else}}far{{/if}} fa-star" data-star-value="3" data-vote-count="{{voteCount}}"></i>
+            <i class="rating__star {{#if (gte average 4)}}fas{{else}}far{{/if}} fa-star" data-star-value="4" data-vote-count="{{voteCount}}"></i>
+            <i class="rating__star {{#if (gte average 5)}}fas{{else}}far{{/if}} fa-star" data-star-value="5" data-vote-count="{{voteCount}}"></i>
+          </div>
+
+
+      </div>
+
+    {{/each}}
+
+  {{else}}
+
+    <h1 class="text-center mb-5 text-white" style="padding-left: 50px;">Bien le bonjour !</h1>
+    
+    <div class="imageRow" style="justify-content:flex-start;">
+  
+
+    {{#each images}}
+
+      <div class="image-box" data-image-id="{{id}}" data-category="{{this.categoryId}}">
+        
+        <a class="userlink textwhite image-card" style="cursor:pointer;">
+
+          <h3 class="thumbnail-title text-white">{{title}}</h3>
+
+          <div class="col-4 image-container">
+            
+            <div class="thumbnail-container">
+              <img src="{{path}}" alt="{{title}}" loading="lazy" class="thumbnail-image">
+            </div>
+
+            <div>
+
+              <a class="userlink userContent" href="/profile/{{idUser}}">
+                <i class='bx bxs-user'></i><p class="usernameContent">{{username}}</p>
+              </a>
+
+            </div>
+
+        </a>
+
+          <div class="rating">
+            <span class="rating__result" id="rating-result-{{id}}"></span>
+            <i class="rating__star {{#if (gte average 1)}}fas{{else}}far{{/if}} fa-star" data-star-value="1" data-vote-count="{{voteCount}}"></i>
+            <i class="rating__star {{#if (gte average 2)}}fas{{else}}far{{/if}} fa-star" data-star-value="2" data-vote-count="{{voteCount}}"></i>
+            <i class="rating__star {{#if (gte average 3)}}fas{{else}}far{{/if}} fa-star" data-star-value="3" data-vote-count="{{voteCount}}"></i>
+            <i class="rating__star {{#if (gte average 4)}}fas{{else}}far{{/if}} fa-star" data-star-value="4" data-vote-count="{{voteCount}}"></i>
+            <i class="rating__star {{#if (gte average 5)}}fas{{else}}far{{/if}} fa-star" data-star-value="5" data-vote-count="{{voteCount}}"></i>
+          </div>
+
+        </div>
+
+      </div>
+
+    {{/each}}
+
+  {{/if}}
+
+</div>
+      
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script type="module" src="/js/homePopup.js"></script>
+<script src="/js/filterCategories.js"></script>
+

@@ -1,0 +1,115 @@
+{{!-- Image post page... --}}
+
+<link rel="stylesheet" href="/css/image.css">
+
+<div id="image-box" class="card mt-5 mx-auto px-1" style="width: 30rem; background: white; box-shadow: 8px 8px 12px rgba(24, 24, 24, 0.2); border-radius:10px;" data-image-id="{{image.id}}">
+    
+	<h2 class="card-title mx-auto mt-5 mb-5" >{{image.title}}</h2>
+		
+    <img class="card-img-top" src="{{image.path}}" width="80%">
+    <div class="card-body">
+        <p class="card-text text-center" style="font-weight:normal; font-size:18px">{{image.description}} </p>
+    </div>
+
+	<div class="rating" style="width:50%; margin:auto;">
+		<span class="rating__result" style="" id="rating-result-{{id}}"></span>
+		<i class="rating__star {{#if (gte image.average 1)}}fas{{else}}far{{/if}} fa-star" data-star-value="1" data-vote-count="{{image.voteCount}}"></i>
+		<i class="rating__star {{#if (gte image.average 2)}}fas{{else}}far{{/if}} fa-star" data-star-value="2" data-vote-count="{{image.voteCount}}"></i>
+		<i class="rating__star {{#if (gte image.average 3)}}fas{{else}}far{{/if}} fa-star" data-star-value="3" data-vote-count="{{image.voteCount}}"></i>
+		<i class="rating__star {{#if (gte image.average 4)}}fas{{else}}far{{/if}} fa-star" data-star-value="4" data-vote-count="{{image.voteCount}}"></i>
+		<i class="rating__star {{#if (gte image.average 5)}}fas{{else}}far{{/if}} fa-star" data-star-value="5" data-vote-count="{{image.voteCount}}"></i>
+	</div>
+
+	<a href="/profile/{{image.idUser}}" style="cursor:pointer; text-align:center; margin:20px 0;" class="text-dark">
+		<div class="username">Publié par <span class="imgUsername">{{image.username}} </span>{{imageDate}}</div>
+	</a>
+
+		<a class="deletImg" id="deletButton"  data-image-id="{{ imageId }}" onclick="deleteImage({{ imageId }})">
+			<i class='bx bxs-trash bx-tada-hover' ></i>
+		</a>
+
+</div>
+
+<div id="cardcomment" class="card mt-10 mx-auto px-3 mb-5 shadow-lg" style="width: 30rem; background: white; border-radius:10px" id="comment">
+    
+	<h5 class="mt-5 mb-3 text-center" >Commentaires</h3>
+
+    <hr>
+	
+						{{#if isCurrentUser}}		
+    {{#each comments}}
+
+		
+		<div class="comments-container">
+
+			<ul id="comments-list" class="comments-list">
+
+				<li>
+					<div class="comment-main-level">
+
+						<!-- Avatar -->
+						{{#if avatar}}
+
+							<a href="/profile/{{ userId }}">
+								<div class="comment-avatar"><img src="/users/avatars/{{ avatar }}" alt=""></div>
+							</a>
+
+						{{else}}
+
+							<a href="/profile/{{ userId }}">
+								<div class="comment-avatar"><img src="/images/default.png" alt=""></div>
+							</a>
+
+						{{/if}}
+
+						<div class="comment-box">
+
+							<div class="comment-head">
+
+								<h6 class="comment-name"><a href="/profile/{{ userId }}">{{ username }}</a></h6>
+								<span>{{ createdAt }}</span>
+								<i class="fa fa-reply"></i>
+									
+								<a class="likeBtn" id="likeButton" data-comment-id="{{ commentId }}" onclick="addLike({{ commentId }})">
+									<i class="fa fa-heart" id="heartIcon"></i>
+								</a>
+								<a class="deletBtn" id="deletButton"   data-comment-id="{{ commentId }}" onclick="deleteComment({{ commentId }})">
+									<i class='bx bxs-message-square-x bx-burst-hover'></i>
+								</a>
+							
+							</div>
+
+							<div class="comment-content">{{ comment }}</div>
+
+						</div>
+
+					</div>	
+
+				</li>
+
+			</ul>
+
+		</div>
+
+		<hr>
+
+    {{/each}}
+						{{/if}}
+
+
+    <form class="formComment" action="/image/{{image.id}}" method="post">
+	
+        <input type="text" class="px-2 py-1 mr-2 mb-2 bg-gradient" name="comment" id="userComment" placeholder="Ajouter un commentaire">
+        <button class="sendBtn" type="submit" ><i class="fa-regular fa-paper-plane"></i></button>
+    
+	</form>
+
+</div>
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="/js/imageRate.js"></script>
+<script src="/js/addLike.js"></script>
+<script src="/js/deleteComment.js"></script>
+<script src="/js/deleteImage.js"></script>
+<script src="/js/changeColor.js"></script>
+<script src="/js/popup.js"></script>

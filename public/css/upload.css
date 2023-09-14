@@ -1,0 +1,148 @@
+.upload-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 84px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-img h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.upload-img form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-img input[type="file"],
+.upload-img input[type="text"],
+.upload-img textarea,
+.upload-img input[type="textarea"] {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.upload-img input[type="file"]:focus,
+.upload-img input[type="text"]:focus,
+.upload-img textarea:focus {
+    outline: none;
+    border-color: #888;
+}
+
+.upload-img fieldset {
+    border: none;
+    margin-bottom: 10px;
+}
+
+.upload-img legend {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.upload-img label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.upload-img input[type="radio"] {
+    margin-right: 5px;
+}
+
+.upload-img input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-img input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.upload-img .file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.upload-img .file-input-container input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-img .file-input-container .file-input-label {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-img .file-input-container .file-input-label:hover {
+    cursor: pointer;
+    background-color: #555;
+}
+
+.upload-img .file-input-container .file-input-icon {
+    margin-right: 5px;
+}
+
+.image-preview img {
+    width: 100%;
+    /* or any size you want to give */
+    height: auto;
+    /* maintain aspect ratio */
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#preview {
+    border: #b4b4b4 1px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #ededed;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.bx-image-add {
+    padding-right: 10px;
+}
+
+br {
+    display: none;
+}

@@ -1,0 +1,21 @@
+{
+  "srcDir": "public/js",
+  "srcFiles": [
+    "formValidation.js", "clearPlayers.js"
+  ],
+  "specDir": "spec",
+  "specFiles": [
+    "jquery-3.6.0.js", "jasmine-jquery.js", "**/*[sS]pec.js"
+  ],
+  "helpers": [
+    "helpers/**/*.js"
+  ],
+  "env": {
+    "stopSpecOnExpectationFailure": false,
+    "stopOnSpecFailure": false,
+    "random": true
+  },
+  "browser": {
+    "name": "firefox"
+  }
+}

@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    font-family: "Poppins";
+}
+section .imgBox{
+    position: relative;
+    width: 50%;
+    height:  100%;
+    background: linear-gradient(transparent,#1d031f), url("/images/logo.png");
+    background-position: center;
+    background-size: cover;
+}
+section .contentBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:  35%;
+    height: 100%;
+}
+/* ici le border bottom n'apparait pas */
+section.contentBox .formBox h2{
+    color: #1d031f;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #430a47;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+#title-1{
+    color: #1d031f;
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+#title-2 {
+    text-align: center;
+    color: #1d031f;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #430a47;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+#title-Up2{
+    text-align: center;
+    color: #1d031f;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #430a47;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+.inputBx{
+    margin-bottom: 20px;
+}
+.inputBx span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #1d031f;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.inputBx input{
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: 400;
+    border: 1px solid #060107;
+    letter-spacing: 1px;
+    color: #0e020f;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.inputBx input[type="submit"]{
+    background-color: inherit; 
+    color: #46002a;
+    outline: 0;
+    border: 2px solid #46002a;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+}
+.inputBx input[type="submit"]:hover{
+    background-color: #212121;
+    color: rgb(255, 255, 255);
+    border: 2px solid #121212;
+    transition: background-color 0.3s; 
+}
+.remember{
+    color: #1d031f;
+    font-weight: 400;
+    font-size: 14px;
+}
+.inputBx p{
+    color: #1d031f;
+    text-align: center;
+}
+.inputBx p a{
+    color: #430a47;
+}
+/* Responsive */
+@media(max-width:768px){
+    section .imgBox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    section .contentBox{
+        width: 100%;
+        z-index: 1;
+    }
+    section .contentBox .formBox{
+        background-color: rgb(255, 255, 255/0.9);
+        padding: 40px;
+    }
+}
+
