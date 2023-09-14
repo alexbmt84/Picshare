@@ -51,6 +51,6 @@ Installer le projet :
 npm run dev
 ```
 
-Ouvrez votre navigateur web à l'adresse http://cpasdrole:3000 pour accéder à l'application.
+Ouvrez votre navigateur web à l'adresse indiquée pour accéder à l'application.
 
 
